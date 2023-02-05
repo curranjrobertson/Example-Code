@@ -1,6 +1,6 @@
 % Curran Robertson
 % This program calculates the percent error of the first value of the
-% series solution to the Transcendental Equation (for heat transfer through a wall) compared to a Numerical
+% series solution to the Transcendental Equation (for heat transfer through a wall) compared to a numerical
 % approximation of the exact value of the Transcendental Equation. It does
 % this for a range of Fourier Numbers (t*) and produces a plot of the results.
 % newtraph.m is required to be in the same folder.
