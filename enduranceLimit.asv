@@ -1,4 +1,6 @@
 function [Se] = enduranceLimit(Sut,a,b,Se_ideal,d,T_F,r,kt,kts)
+% This function calculates the endurance limit given Sut (min tensile strength, a (surface parameter, b (surface exp. param.), Se_ideal,
+% d, T_F, r, kt, kts.
 % Enter Sut in MPa, T_F in Fahrenheit
 ka = a*Sut^b;
 
@@ -89,10 +91,14 @@ kd = 0.98 + 3.5*(10^-4)*T_F-6.3*(10^-7)*T_F^2;
 % sd = 0.08 
 % x = ;
 % mu_x = ;
-za = (x-mu_x)/sd);
-ke = 1 - 0.08*za;
+% za = (x-mu_x)/sd);
+% ke = 1 - 0.08*za;
+
+% Assuming 99 percent reliability
+ke = 0.814;
+
 kf = 1 + (kt-1)/(1+sa/sqrt(r));
 kfs = 1 + (kts-1)/(1+sa/sqrt(r));
-Se = ka*kb*kc*kd*ke*kf*kf*kfs*Se_ideal;
+Se = ka*kb*kc*kd*ke*kf*kfs*Se_ideal;
 
 end

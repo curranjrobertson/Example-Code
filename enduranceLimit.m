@@ -1,7 +1,8 @@
 function [Se] = enduranceLimit(Sut,a,b,Se_ideal,d,T_F,r,kt,kts)
+% This function calculates the endurance limit given Sut (min tensile strength, a (surface parameter, b (surface exp. param.), Se_ideal (ideal endurance limit),
+% d (diameter), T_F (temperature), r (notch radius), kt (stress conc. factor), kts (stress conc. factor shear).
 % Enter Sut in MPa, T_F in Fahrenheit
 ka = a*Sut^b;
-
 
 prompt = 'Axial, Torsional, or Bending A/T/B : ';
 stress = input(prompt,'s');
@@ -94,6 +95,7 @@ kd = 0.98 + 3.5*(10^-4)*T_F-6.3*(10^-7)*T_F^2;
 
 % Assuming 99 percent reliability
 ke = 0.814;
+
 kf = 1 + (kt-1)/(1+sa/sqrt(r));
 kfs = 1 + (kts-1)/(1+sa/sqrt(r));
 Se = ka*kb*kc*kd*ke*kf*kfs*Se_ideal;
