@@ -91,8 +91,11 @@ kd = 0.98 + 3.5*(10^-4)*T_F-6.3*(10^-7)*T_F^2;
 % mu_x = ;
 % za = (x-mu_x)/sd);
 % ke = 1 - 0.08*za;
+
+% Assuming 99 percent reliability
+ke = 0.814;
 kf = 1 + (kt-1)/(1+sa/sqrt(r));
 kfs = 1 + (kts-1)/(1+sa/sqrt(r));
-Se = ka*kb*kc*kd*kf*kf*kfs*Se_ideal;
+Se = ka*kb*kc*kd*ke*kf*kfs*Se_ideal;
 
 end
