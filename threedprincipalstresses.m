@@ -1,4 +1,5 @@
 function [sigma] = threedprincipalstresses(x, y, z, x_y, y_z, z_x)
+%
 syms stress
 
 I1 = x + y + z;
