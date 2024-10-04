@@ -1,4 +1,5 @@
 # Example-Code
+Author Date: circa 2020-2021
 
 This is a repository of several functions and scripts with applications related to Mechanical Engineering. 
 
